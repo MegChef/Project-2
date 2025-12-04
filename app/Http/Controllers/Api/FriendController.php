@@ -25,7 +25,7 @@ class FriendController extends Controller
             return response()->json(['success' => false, 'message' => 'You cannot friend yourself'], 400);
         }
 
-        // Check if request already exists
+        // check if request already exists
         $exists = Friend::where('sender_id', $senderId)
             ->where('receiver_id', $receiverId)
             ->first();
